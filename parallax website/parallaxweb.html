@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 1600px;
+            background: #000;
+        }
+        section{
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        section::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 1400px;
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 80%,#000 100%);
+            z-index: 100000;
+        }
+        section img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        #last{
+            z-index: 10;
+            /* height: 1200px; */
+        }
+        #text{
+            position: relative;
+            color: rgb(36, 57, 63);
+            z-index: 2;
+            font-size: 11em;
+            text-align: center;
+            /* padding-top: 250px; */
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            font-family: 'Forte',cursive;
+            font-size: 10vw;
+
+        }
+        .ab-text{
+            padding: 100px 20%;
+        }
+        .heading{
+            text-align: center;
+        }
+        .heading h2{
+            font-size: 40px;
+            color: white;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+        }
+        .heading p{
+            color: #9bacc4;
+            font-size: 15px;
+            line-height: 28px;
+        }
+        #head{
+            color: #9bacc4;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+            grid-gap: 1.7rem;
+            align-items: center;
+            margin-top: 5rem;
+        }
+        .box{
+            height: 340px;
+            width: auto;
+            border-radius: 10px;
+            overflow: hidden;
+            background: gray;
+            transition: all 0.8s;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box1{
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 75%,#000 100%),url(1.jpeg)center center no-repeat;
+            background-size: cover;
+        }
+        .box1:hover{
+            transform: translateY(20px);
+            transition: all 0.5 ease;
+            opacity: 0.6;
+        }
+        .box2{
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 75%,#000 100%),url(20.jpg)center center no-repeat;
+            background-size: cover;
+        }
+        .box2:hover{
+            transform: translateY(20px);
+            transition: all 0.5 ease;
+            opacity: 0.6;
+        }
+        .box3{
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 75%,#000 100%),url(3.jpg)center center no-repeat;
+            background-size: cover;
+        }
+        .box3:hover{
+            transform: translateY(20px);
+            transition: all 0.5 ease;
+            opacity: 0.6;
+        }
+        .box4{
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 75%,#000 100%),url(4.jpg)center center no-repeat;
+            background-size: cover;
+        }
+        .box4:hover{
+            transform: translateY(20px);
+            transition: all 0.5 ease;
+            opacity: 0.6;
+        }
+        .in{
+            position: absolute;
+            bottom: 20px;
+            color: white;
+            font-size: 22px;
+            letter-spacing: 1px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #copyright{
+            text-align: center;
+            color: #adb5bd;
+            padding-top: 150px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="2.jpg" id="first" >
+        <img src="last.png" id="last">
+        <h1 id="text">Parallax</h1>
+    </section>
+
+    
+    <div class="ab-text">
+        <div class="heading">
+            <h2>Photography</h2>
+            <p>The beautiful picture of nature presented here with a parallax design<br>
+                <h3 id="head">"Nature always wears the colors of the rainbow"</h3>
+            </p>
+        </div>
+        <div class="container">
+            <!-- <div class="box box1">
+                <div class="in">
+                    <p></p>
+                </div>    
+            </div> -->
+
+            <div class="box box2" id="box2">
+                <div class="in">
+                    <p>Himalaya</p>
+                </div>    
+            </div>
+
+            <div class="box box3">
+                <div class="in">
+                    <p>Aravalli</p>
+                </div>    
+            </div>
+
+            <div class="box box4">
+                <div class="in">
+                    <p>Purvanchal</p>
+                </div>    
+            </div>
+        </div>
+        <div id="copyright">
+            <p>&#169 copyright claim and design by Chirag 2023</p>
+        </div>
+    </div>
+    
+
+    <script>
+        let first= document.getElementById('first');
+        let last= document.getElementById('last');
+        let text= document.getElementById('text');
+
+        window.addEventListener('scroll',function(){
+            var value =window.scrollY;
+            first.style.top=value * 0.7 + 'px';
+            last.style.bottom=value * 0.5 + 'px';
+            text.style.top=value * 1 + 'px';
+        })
+    </script>
+    <!-- <script>
+        let box2= document.getElementById('box2');
+        let box3= document.getElementById('box3');
+        let box4= document.getElementById('box4');
+
+        window.addEventListener('scroll',function(){
+            var value =window.scrollY;
+            box2.style.top=value * 0.1 + 'px';
+            box3.style.bottom=value * 0.5 + 'px';
+            box4.style.top=value * 1 + 'px';
+        })
+    </script> -->
+    
+</body>
+</html>
